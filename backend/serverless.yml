@@ -1,0 +1,27 @@
+service: collaborative-whiteboard-backend
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: ap-south-1
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:PutItem
+        - dynamodb:GetItem
+      Resource: arn:aws:dynamodb:ap-south-1:208976686964:table/Whiteboards 
+
+functions:
+  saveBoard:
+    handler: lambdas/saveBoard/index.handler
+    events:
+      - http:
+          path: board/save
+          method: post
+  getBoard:
+    handler: lambdas/getBoard/index.handler
+    events:
+      -http:
+        path: board/get
+        method: get
+

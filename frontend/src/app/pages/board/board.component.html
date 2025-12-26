@@ -1,0 +1,26 @@
+<h2>Board: {{ boardId }}</h2>
+<p>Mode: {{ mode }}</p>
+
+<!-- Show Canvas -->
+<div *ngIf="mode?.includes('canvas')">
+  <h3>🎨 Canvas Section</h3>
+  <div style="border: 2px solid #444; height: 300px;">
+    <app-canvas></app-canvas>
+  </div>
+</div>
+
+<!-- Show Chat -->
+<div *ngIf="mode?.includes('chat')">
+  <h3>💬 Chat Section</h3>
+  <div style="border: 2px solid #444; height: 150px;">
+    Chat UI goes here...
+  </div>
+</div>
+
+<!-- Show Video -->
+<div *ngIf="mode?.includes('call')">
+  <h3>📹 Video Call Section</h3>
+  <div style="border: 2px solid #444; height: 200px;">
+    Video Call UI goes here...
+  </div>
+</div>

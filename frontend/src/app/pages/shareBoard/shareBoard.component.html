@@ -1,0 +1,14 @@
+<h2>Select Share Mode</h2>
+
+<label><input type="radio" name="mode" [(ngModel)]="mode" value="canvas"> Canvas Only</label><br>
+<label><input type="radio" name="mode" [(ngModel)]="mode" value="canvas+chat"> Canvas + Chat</label><br>
+<label><input type="radio" name="mode" [(ngModel)]="mode" value="canvas+call"> Canvas + Video Call</label><br>
+<label><input type="radio" name="mode" [(ngModel)]="mode" value="canvas+chat+call"> Canvas + Chat + Video Call</label><br><br>
+
+<button (click)="generateLink()">Generate Share Link</button>
+
+<p *ngIf="shareLink">
+  Share this link with your friend:
+  <br>
+  <strong>{{ shareLink }}</strong>
+</p>
