@@ -16,6 +16,21 @@ io.on("connection", (socket) => {
 
   socket.on("chatMessage", (msg) => {
   socket.broadcast.emit("chatMessage", msg);
+  });
+   
+  socket.on("offer", (data) => {
+  socket.broadcast.emit("offer", data);
 });
+
+socket.on("answer", (data) => {
+  socket.broadcast.emit("answer", data);
+});
+
+socket.on("ice-candidate", (candidate) => {
+  socket.broadcast.emit("ice-candidate", candidate);
+});
+
+
+
 
 });
