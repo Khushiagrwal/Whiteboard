@@ -15,9 +15,10 @@ export class SocketService {
   emit(event: string, data?: any) {
     this.socket.emit(event, data);
   }
-
+  
   // Listen event
   on(event: string, callback: (data: any) => void) {
     this.socket.on(event, callback);
   }
+  
 }

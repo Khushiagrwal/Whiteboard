@@ -2,12 +2,13 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { CanvasComponent } from './canvas/canvas.component'; // Ensure this path is correct
+import { ChatComponent } from '../chat/chat.component'; // Adjusted the path to the correct location
 
 @Component({
   selector: 'app-board',
   standalone: true,
   templateUrl: './board.component.html',
-  imports: [CommonModule, CanvasComponent]
+  imports: [CommonModule, CanvasComponent, ChatComponent]
 })
 export class BoardComponent {
   boardId: string | null = null;

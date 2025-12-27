@@ -13,4 +13,9 @@ io.on("connection", (socket) => {
   socket.on("draw", (data) => {
     socket.broadcast.emit("draw", data); // send to others
   });
+
+  socket.on("chatMessage", (msg) => {
+  socket.broadcast.emit("chatMessage", msg);
+});
+
 });
